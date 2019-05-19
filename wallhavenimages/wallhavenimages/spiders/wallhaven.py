@@ -10,7 +10,7 @@ class WallhavenSpider(scrapy.Spider):
     base_url = "https://alpha.wallhaven.cc/latest?page="
 
     def start_requests(self):
-        for i in range(1, 10):
+        for i in range(10, 11):
             url = self.base_url + str(i)
             print(url)
             yield scrapy.Request(url=url, callback=self.parse)
