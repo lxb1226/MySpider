@@ -16,5 +16,4 @@
     
 * [wangyiyun](https://github.com/lxb1226/MySpider/tree/master/wangyiyun)
 
-    这是一个[网易云音乐](https://music.163.com/ 网易云音乐)爬虫，可以爬取网易云的音乐，通过歌名搜索就行，
-    其中破解js中编码借鉴了其他人的代码
+    这是一个[网易云音乐](https://music.163.com/ "网易云音乐")爬虫，可以爬取网易云的音乐，通过歌名搜索就行,其中破解js中编码借鉴了其他人的代码
