@@ -1,4 +1,3 @@
-from lxml import etree
 import requests, os, sys, click, re
 from http import cookiejar
 from encrypyed import Encrypyed
@@ -119,11 +118,15 @@ class Cralwer:
         ids = re.findall(pattern, resp.text)
         return ids
 
+    def run(self, song_name):
+        result = self.get_song_id(song_name)
+        # print(result)
+        song_id = result["result"]["songs"][0]["id"]
+        # print(song_id)
+        url = self.get_song_url(song_id)
+        self.download_song(url, song_name, folder="Musics")
 
 if __name__ == '__main__':
     crawler = Cralwer()
-    # url = "https://music.163.com/playlist?id=554019970"
-    url = "https://music.163.com/playlist?id=2783351162"
-    crawler.download_by_playlist(url)
-    # id = "1370858195"
-    # crawler.get_name_by_id(id)
+    song_name = input("请输入你要下载的歌名:\n")
+    crawler.run(song_name)
