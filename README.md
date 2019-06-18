@@ -14,4 +14,5 @@
     
     这是一个"http://alpha.wallhaven.cc/"图片网站的爬虫，利用的scrapy框架。
     
-   
+* wangyiyun 
+    这是一个网易云音乐爬虫，可以爬取网易云的音乐，通过歌名搜索就行
