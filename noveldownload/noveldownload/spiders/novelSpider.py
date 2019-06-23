@@ -29,7 +29,11 @@ class NovelspiderSpider(scrapy.Spider):
             yield scrapy.Request(url=href, callback=self.download_text, meta={"name": name})
 
     def download_text(self, response):
-        text = response.xpath('//*[@id="content"]/text()').get()
+        texts = response.xpath('//*[@id="content"]/text()').getall()
+
+        text = "".join([t.replace('\xa0', '', -1) for t in texts])
+        # print(text)
+
         titlename = response.xpath(
             "//div[@id='wrapper']/div[@class='content_read']/div[@class='box_con']/div[@class='con_top']/a[3]/text()").get()
 

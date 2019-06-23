@@ -74,7 +74,7 @@ RANDOM_UA_TYPE = "random"
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'noveldownload.pipelines.NoveldownloadPipeline': 300,
+    'noveldownload.pipelines.MongoPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -97,3 +97,8 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+# 数据库
+MONGODB_URI = "mongodb://localhost:27017/"
+MONGODB_DATABASE = "biquge5"
